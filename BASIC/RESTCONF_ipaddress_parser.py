@@ -4,15 +4,14 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
-if __name__ == "__main__":
 
-    auth = HTTPBasicAuth('admin', 'C1sco12345')
-    headers = {
-        'Content-Type': 'application/yang.data+xml'
-    }
+auth = HTTPBasicAuth('admin', 'C1sco12345')
+headers = {
+     'Content-Type': 'application/yang.data+xml'
+}
 
-    url = 'https://198.18.134.11:443/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=1/ip/address/primary'
-    response = requests.get(url, headers=headers, auth=auth, verify=False)
+url = 'https://198.18.134.11:443/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=1/ip/address/primary'
+response = requests.get(url, headers=headers, auth=auth, verify=False)
 
 # print(response.text)
 
